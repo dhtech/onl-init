@@ -35,3 +35,9 @@ _EOF_
 
 useradd -m dhtech -s /bin/bash
 echo 'dhtech ALL=(ALL:ALL) NOPASSWD: ALL' > /etc/sudoers.d/dreamhack
+
+# Fire the lasers
+for i in $(find /sys -name \*tx_disable\*)
+do
+  echo 0 > $i
+done
